@@ -254,6 +254,9 @@ static int dsi_panel_reset(struct dsi_panel *panel)
 		}
 	}
 
+#ifdef CONFIG_WT_QGKI
+	usleep_range(10000, 10100);
+#endif
 	if (r_config->count) {
 		rc = gpio_direction_output(r_config->reset_gpio,
 			r_config->sequence[0].level);
