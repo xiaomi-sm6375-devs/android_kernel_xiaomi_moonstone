@@ -1,0 +1,47 @@
+&qupv3_se7_i2c_sleep {
+	config {
+		/delete-property/ bias-disable;
+		bias-pull-up;
+		input-enable;
+	};
+};
+
+&qupv3_se10_i2c_sleep {
+	config {
+		/delete-property/ bias-disable;
+		bias-pull-up;
+		input-enable;
+	};
+};
+
+&tlmm {
+	vib_ldo_active {
+		vib_ldo_active: vib_ldo_active {
+			mux {
+				pins = "gpio100";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio100";
+				drive-strength = <0x02>;
+				bias-pull-up;
+			};
+		};
+	};
+
+	vib_ldo_suspend {
+		vib_ldo_suspend: vib_ldo_suspend {
+			mux {
+				pins = "gpio100";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio100";
+				drive-strength = <0x02>;
+				bias-pull-down;
+			};
+		};
+	};
+};

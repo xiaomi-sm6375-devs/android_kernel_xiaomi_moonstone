@@ -2,3 +2,4 @@
 #include "gemstone-audio.dts"
 #include "gemstone-camera.dts"
 #include "gemstone-memory.dts"
+#include "gemstone-pinctrl.dts"
