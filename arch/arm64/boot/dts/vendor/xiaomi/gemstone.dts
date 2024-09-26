@@ -1,1 +1,2 @@
 #include "../qcom/blair.dts"
+#include "gemstone-audio.dts"

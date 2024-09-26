@@ -1,0 +1,13 @@
+/ {
+	si_pa_L: si_pa.0 {
+		compatible = "si,sia81xx";
+		si,si_pa_type = "sia8159";
+		si,si_pa_disable_pin = <1>;
+		timer_task_hdl = <0>;
+		channel_num = <0>;
+		owi_mode = <1>;
+		en_x_filter = <0>;
+		en_dynamic_updata_vdd = <0>;
+		dynamic_updata_vdd_port = <45106>;
+	};
+};
