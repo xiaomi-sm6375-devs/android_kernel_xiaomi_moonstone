@@ -4,10 +4,10 @@
 		/delete-property/ vcc_i2c-supply;
 		/delete-property/ vdd-supply;
 
-		compatible = "focaltech,fts";
 		panel = <&dsi_m17_38_0c_0a_fhd_dsc_video
 			&dsi_m17_k6s_38_0c_0a_fhd_dsc_video>;
 		interrupts = <22 2>;
+		focaltech,ic-type = <0x3519E489>;
 		focaltech,reset-gpio = <&tlmm 21 1>;
 		focaltech,irq-gpio = <&tlmm 22 2>;
 		focaltech,avdd-gpio = <&tlmm 49 0>;
