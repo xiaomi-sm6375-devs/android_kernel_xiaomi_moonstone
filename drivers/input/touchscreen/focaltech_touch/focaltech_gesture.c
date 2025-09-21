@@ -66,6 +66,7 @@
 #define GESTURE_V                               0x54
 #define GESTURE_Z                               0x41
 #define GESTURE_C                               0x34
+#define GESTURE_AOD                             0x27
 
 /*****************************************************************************
 * Private enumerations, structures and unions using typedef
@@ -296,6 +297,9 @@ static void fts_gesture_report(struct input_dev *input_dev, int gesture_id)
 		gesture = KEY_GESTURE_C;
 		break;
 
+	case GESTURE_AOD:
+		return;
+
 	default:
 		gesture = -1;
 		break;
@@ -359,6 +363,10 @@ int fts_gesture_readdata(struct fts_ts_data *ts_data, u8 *data)
 	gesture->point_num = buf[3];
 	FTS_DEBUG("gesture_id=%d, point_num=%d",
 		gesture->gesture_id, gesture->point_num);
+
+	/* Filter out AOD gesture ID */
+	if (gesture->gesture_id == GESTURE_AOD)
+		return 1;
 
 	/* save point data,max:6 */
 	for (i = 0; i < FTS_GESTURE_POINTS_MAX; i++) {
