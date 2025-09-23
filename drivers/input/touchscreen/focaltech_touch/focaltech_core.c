@@ -2569,6 +2569,7 @@ static int fb_notifier_callback(struct notifier_block *self,
 		break;
 
 	case DRM_PANEL_BLANK_POWERDOWN:
+	case DRM_PANEL_BLANK_LP:
 		if (event == DRM_PANEL_EARLY_EVENT_BLANK) {
 			queue_work(fts_data->ts_workqueue,
 					&fts_data->suspend_work);
