@@ -115,6 +115,7 @@ static int fts_i2c_read(u8 *cmd, u32 cmdlen, u8 *data, u32 datalen)
 #endif
 #endif
 			FTS_ERROR("i2c_transfer(read) fail,ret:%d", ret);
+			msleep(2);
 		} else {
 			memcpy(data, ts_data->bus_rx_buf, datalen);
 			break;
